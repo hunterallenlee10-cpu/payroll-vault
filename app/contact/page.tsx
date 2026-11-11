@@ -10,6 +10,7 @@ import { business } from "@/lib/business";
 import { breadcrumbSchema, localBusinessSchema } from "@/lib/schema";
 
 const title = "Contact Payroll Vault Frederick | Payroll in Frederick, MD";
+const ogAlt = "Payroll Vault Frederick: Payroll, handled by your neighbors. Frederick, MD";
 const description =
   "Call, text or email Payroll Vault Frederick. Payroll and HR for Frederick County businesses, Monday to Friday 9 to 5. Request your payroll quote today.";
 
@@ -17,8 +18,9 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: "/contact" },
-  openGraph: { title, description, url: "/contact" },
-  twitter: { card: "summary_large_image", title, description },
+  // A page-level openGraph replaces the root one, so point at the shared link-preview image explicitly.
+  openGraph: { title, description, url: "/contact", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: ogAlt }] },
+  twitter: { card: "summary_large_image", title, description, images: [{ url: "/twitter-image", alt: ogAlt }] },
 };
 
 const tiles = [
