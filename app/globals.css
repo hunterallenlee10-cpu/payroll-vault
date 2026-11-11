@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f7f5ef;
+  --color-bond: #ffffff;
+  --color-rule: #e3dfd3;
+  --color-vault: #2f7a35;
+  --color-vault-deep: #256329;
+  --color-vault-bright: #4b964d;
+  --color-ink: #14212b;
+  --color-muted: #5b6670;
+  /* Muted text on the ink band: paper at 78% passes AA on #14212B */
+  --color-paper-muted: #c9ccc9;
+
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-public-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-card: 6px;
+  --shadow-nav: 0 1px 2px rgb(20 33 43 / 0.08);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  :where(h1, h2, h3, h4) {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 0;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  /* Every figure lines up like a ledger. */
+  body,
+  input,
+  button,
+  select,
+  textarea {
+    font-variant-numeric: tabular-nums;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-vault);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  .on-ink :focus-visible {
+    outline-color: #8fd18f;
+  }
+  ::selection {
+    background: #d6e8d3;
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  /* Ledger paper: an almost invisible horizontal rule every 32px, fading at the edges. */
+  .ledger {
+    position: relative;
+    isolation: isolate;
+  }
+  .ledger::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      rgb(227 223 211 / 0.35) 31px,
+      rgb(227 223 211 / 0.35) 32px
+    );
+    -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 40%, transparent 100%);
+  }
+  .ledger-ink::before {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      rgb(247 245 239 / 0.05) 31px,
+      rgb(247 245 239 / 0.05) 32px
+    );
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .card {
+    background: var(--color-bond);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-card);
+  }
+  .card-featured {
+    box-shadow: inset 0 2px 0 var(--color-vault);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0.75rem 1.375rem;
+    border-radius: var(--radius-card);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 120ms ease;
+    cursor: pointer;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    background: var(--color-vault);
+    color: #fff;
+    border: 1px solid var(--color-vault);
+  }
+  .btn-primary:hover {
+    background: var(--color-vault-deep);
+    border-color: var(--color-vault-deep);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-ink);
+    border: 1px solid #c9c3b3;
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-ink);
+    background: var(--color-bond);
+  }
+  .btn-ghost-ink {
+    background: transparent;
+    color: var(--color-paper);
+    border: 1px solid rgb(247 245 239 / 0.4);
+  }
+  .btn-ghost-ink:hover {
+    border-color: var(--color-paper);
+    background: rgb(247 245 239 / 0.06);
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-height: 44px;
+    font-weight: 600;
+    color: var(--color-vault);
+    text-decoration: underline;
+    text-decoration-color: rgb(47 122 53 / 0.35);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 160ms ease;
+    cursor: pointer;
+  }
+  .text-link:hover {
+    text-decoration-color: var(--color-vault);
+  }
+
+  .section {
+    padding-block: 72px;
+  }
+  @media (min-width: 1024px) {
+    .section {
+      padding-block: 120px;
+    }
+  }
+  .wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  @media (min-width: 768px) {
+    .wrap {
+      padding-inline: 32px;
+    }
+  }
+
+  .hairline-list > * + * {
+    border-left: 1px solid var(--color-rule);
+  }
+}
+
+/* ---------- Vault Lock: the hero's one piece of motion ---------- */
+@keyframes vault-dial-turn {
+  0% { transform: rotate(-120deg); }
+  22% { transform: rotate(-82deg); }
+  33% { transform: rotate(-80deg); }
+  55% { transform: rotate(-42deg); }
+  66% { transform: rotate(-40deg); }
+  90% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes vault-shackle-drop {
+  0% { transform: translateY(-14px); }
+  70% { transform: translateY(1px); }
+  100% { transform: translateY(0); }
+}
+@keyframes vault-stamp-land {
+  0% { opacity: 0; transform: rotate(-9deg) scale(1.35); }
+  60% { opacity: 0.9; transform: rotate(-9deg) scale(0.97); }
+  80% { transform: rotate(-9deg) scale(1.01) translateY(2px); }
+  100% { opacity: 0.9; transform: rotate(-9deg) scale(1) translateY(0); }
+}
+
+.vault-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.vault-shackle {
+  transform-box: fill-box;
+}
+.vault-stamp {
+  opacity: 0.9;
+  transform: rotate(-9deg);
+}
+.vault-animate .vault-ring {
+  animation: vault-dial-turn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+.vault-animate .vault-shackle {
+  animation: vault-shackle-drop 0.15s cubic-bezier(0.5, 0, 0.75, 0) 0.85s both;
+}
+.vault-animate .vault-stamp {
+  animation: vault-stamp-land 0.3s cubic-bezier(0.2, 0.9, 0.3, 1) 1.02s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .vault-animate .vault-ring,
+  .vault-animate .vault-shackle,
+  .vault-animate .vault-stamp {
+    animation: none;
+  }
+}
+
+/* Hide scrollbar on the review swipe row while keeping it scrollable */
+.swipe-row {
+  scrollbar-width: none;
+}
+.swipe-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Checkup hours slider (on the ink band) */
+.checkup-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+.checkup-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #2f7a35 0 var(--pct), rgb(247 245 239 / 0.2) var(--pct) 100%);
+}
+.checkup-range::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #2f7a35 0 var(--pct), rgb(247 245 239 / 0.2) var(--pct) 100%);
+}
+.checkup-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  margin-top: -10px;
+  border-radius: 999px;
+  background: #f7f5ef;
+  border: 6px solid #2f7a35;
+}
+.checkup-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #f7f5ef;
+  border: 6px solid #2f7a35;
+}
+.checkup-range:focus-visible {
+  outline: 2px solid #8fd18f;
+  outline-offset: 4px;
+}
+
+/* Switch Planner: 200ms step and panel transitions */
+@keyframes planner-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes planner-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.planner-step { animation: planner-in 200ms ease-out both; }
+.planner-backdrop { animation: planner-fade 200ms ease-out both; }
+.planner-panel { animation: planner-in 200ms ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .planner-step, .planner-backdrop, .planner-panel { animation: none; }
+}
