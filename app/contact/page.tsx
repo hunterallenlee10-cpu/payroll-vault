@@ -40,7 +40,7 @@ export default function ContactPage() {
             <h1 id="contact-title">
               <span className="eyebrow block">Contact Payroll Vault Frederick, payroll services in Frederick, MD</span>
             </h1>
-            <div className="mt-5 flex items-center gap-5">
+            <div className="mt-5 flex items-center gap-4 sm:gap-5">
               <Image
                 src="/images/01-mike-taylor-owner-headshot-BEST.webp"
                 alt="Mike Taylor, owner of Payroll Vault Frederick"
@@ -48,9 +48,9 @@ export default function ContactPage() {
                 height={480}
                 sizes="72px"
                 priority
-                className="size-14 shrink-0 rounded-full border border-rule object-cover sm:size-[72px]"
+                className="size-12 shrink-0 rounded-full border border-rule object-cover sm:size-[72px]"
               />
-              <p className="font-display text-[2.5rem] font-semibold leading-[1.05] tracking-[-0.02em] sm:text-6xl">
+              <p className="font-display text-[2rem] font-semibold leading-[1.08] tracking-[-0.02em] sm:text-6xl">
                 Talk to Payroll Vault Frederick.
               </p>
             </div>
@@ -114,7 +114,10 @@ export default function ContactPage() {
                   Serving {business.serviceArea}. Based in Frederick.
                 </p>
                 <CountyMap className="mx-auto mt-5 h-auto w-full max-w-[420px]" />
-                <p className="mt-4 text-[0.9375rem] leading-relaxed text-ink/80">{business.towns.join(", ")}.</p>
+                <p className="mt-4 text-[0.9375rem] leading-relaxed text-ink/80">
+                  <span className="sm:hidden">Dots mark the towns we serve: </span>
+                  {business.towns.join(", ")}.
+                </p>
               </div>
             </aside>
           </div>

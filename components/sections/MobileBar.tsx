@@ -1,5 +1,6 @@
 import { FileText, MessageSquareText, Phone } from "lucide-react";
 import { business } from "@/lib/business";
+import BackToTop from "../BackToTop";
 import QuoteButton from "../QuoteButton";
 
 // Mobile only: always-visible Call, Text and Get a quote.
@@ -9,6 +10,7 @@ export default function MobileBar() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-paper/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:hidden">
       <div className="flex items-stretch gap-1.5 px-2 py-1.5">
+        <BackToTop variant="bar" />
         <a href={business.tel} className={`${item} rounded text-ink`} aria-label={`Call ${business.phoneDisplay}`}>
           <Phone className="size-5 text-vault" strokeWidth={1.5} aria-hidden="true" />
           Call

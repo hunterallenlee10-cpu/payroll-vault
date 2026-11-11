@@ -14,7 +14,7 @@ export default function Reviews() {
       </div>
       <div className="mt-12">
         <ul
-          className="swipe-row wrap flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible lg:gap-6"
+          className="swipe-row wrap flex scroll-px-5 snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible lg:gap-6"
           aria-label="Sample reviews"
         >
           {sampleReviews.map((r) => (

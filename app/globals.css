@@ -320,3 +320,9 @@
 @media (prefers-reduced-motion: reduce) {
   .planner-step, .planner-backdrop, .planner-panel { animation: none; }
 }
+
+/* County map: at phone size the town labels would render around 9px. Show the dots and the Frederick label;
+   the full town list sits directly under the map. */
+@media (max-width: 639px) {
+  .county-label-minor { display: none; }
+}

@@ -14,7 +14,7 @@ export default function PayStub() {
       aria-label="Illustration of a Payroll Vault Frederick pay statement stamped Paid on time"
     >
       <div className="flex items-baseline justify-between gap-4 border-b border-ink/80 pb-3">
-        <p className="text-[0.6875rem] font-semibold uppercase leading-relaxed tracking-[0.14em] text-ink lg:pr-28">
+        <p className="text-[0.75rem] font-semibold uppercase leading-relaxed tracking-[0.12em] text-ink lg:pr-28">
           Payroll Vault Frederick <span aria-hidden="true">·</span> Pay statement
         </p>
       </div>
@@ -44,7 +44,7 @@ export default function PayStub() {
 
       <div className="relative mt-6 flex h-[84px] items-end justify-between border-t border-rule pt-3">
         <div>
-          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-muted">Direct deposit</p>
+          <p className="text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-muted">Direct deposit</p>
           <div className="mt-2 space-y-1.5" aria-hidden="true">
             <span className="block h-[5px] w-28 rounded-full bg-rule" />
             <span className="block h-[5px] w-20 rounded-full bg-rule" />
@@ -57,7 +57,7 @@ export default function PayStub() {
             style={{ boxShadow: "inset 0 0 0 2px #fff, inset 0 0 0 3.5px #2F7A35" }}
           >
             <span className="font-display text-[1.375rem] font-semibold leading-none tracking-[0.08em]">PAID</span>
-            <span className="mt-1 text-[0.625rem] font-semibold uppercase leading-none tracking-[0.24em]">On time</span>
+            <span className="mt-1 text-[0.6875rem] font-semibold uppercase leading-none tracking-[0.2em]">On time</span>
           </span>
         </div>
       </div>
