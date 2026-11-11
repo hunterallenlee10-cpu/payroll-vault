@@ -68,7 +68,8 @@ function build() {
   return { outline: d, details: details.join(" "), width: x };
 }
 
-const art = build();
+export const spiresArt = build();
+const art = spiresArt;
 
 export default function SpiresLine({
   className,

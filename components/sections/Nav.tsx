@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { LogIn, Menu, Phone, X } from "lucide-react";
 import { business } from "@/lib/business";
 import QuoteButton from "../QuoteButton";
@@ -57,7 +58,7 @@ export default function Nav() {
       >
         Skip to content
       </a>
-      <nav aria-label="Main" className="wrap flex h-16 items-center gap-6 lg:h-[72px]">
+      <nav aria-label="Main" className="wrap flex h-16 items-center gap-4 lg:h-[72px] xl:gap-6">
         <Link href="/" className="flex shrink-0 items-center py-2" aria-label="Payroll Vault Frederick home">
           <Image
             src="/images/00-logo-2-logo-wordmark-transparent.png"
@@ -70,12 +71,12 @@ export default function Nav() {
           />
         </Link>
 
-        <ul className="ml-2 hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-0.5 lg:flex xl:ml-2 xl:gap-1">
           {anchors.map((a) => (
             <li key={a.href}>
               <a
                 href={a.href}
-                className="inline-flex min-h-11 items-center rounded px-3 text-[15px] font-medium text-ink/80 transition-colors hover:text-ink"
+                className="inline-flex min-h-11 items-center whitespace-nowrap rounded px-2.5 text-[15px] font-medium text-ink/80 xl:px-3 transition-colors hover:text-ink"
               >
                 {a.label}
               </a>
@@ -86,7 +87,7 @@ export default function Nav() {
         <div className="ml-auto hidden items-center gap-2 lg:flex">
           <a
             href={business.clientLogin}
-            className="inline-flex min-h-11 items-center gap-1.5 px-2 text-[15px] text-muted transition-colors hover:text-ink"
+            className="inline-flex min-h-11 items-center gap-1.5 whitespace-nowrap px-2 text-[15px] text-muted transition-colors hover:text-ink"
           >
             Client login
           </a>
@@ -114,7 +115,8 @@ export default function Nav() {
         </button>
       </nav>
 
-      {open && (
+      {open &&
+        createPortal(
         <div
           id="mobile-menu"
           ref={sheetRef}
@@ -165,8 +167,9 @@ export default function Nav() {
               Client login
             </a>
           </div>
-        </div>
-      )}
+        </div>,
+          document.body,
+        )}
     </header>
   );
 }

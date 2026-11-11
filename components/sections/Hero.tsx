@@ -18,11 +18,11 @@ export default function Hero() {
             <span className="eyebrow block max-w-[calc(100%-100px)] font-sans leading-[1.5] sm:max-w-none sm:pr-28 lg:pr-0">
               Payroll services in Frederick, MD · Frederick County
             </span>
+            {/* One text block (inline green line after a break) so the whole headline is the LCP element. */}
             <span className="mt-4 block text-[2.375rem] font-semibold leading-[1.05] tracking-[-0.02em] text-ink sm:text-6xl lg:mt-6 lg:text-[4.5rem] xl:text-[5rem]">
               Payroll, handled by your neighbors.
-            </span>
-            <span className="mt-1 block text-[2.375rem] font-semibold leading-[1.05] tracking-[-0.02em] text-vault sm:text-6xl lg:mt-2 lg:text-[4.5rem] xl:text-[5rem]">
-              Not a call center.
+              <br />
+              <span className="text-vault">Not a call center.</span>
             </span>
           </h1>
 
@@ -39,10 +39,10 @@ export default function Hero() {
             </a>
           </div>
 
-          <ul className="mt-8 flex flex-wrap items-center gap-y-2 text-[0.8125rem] font-semibold uppercase tracking-[0.1em] text-muted">
-            <li className="pr-4">Owner-run since 2025</li>
-            <li className="border-l border-rule px-4">No contracts</li>
-            <li className="border-l border-rule pl-4">{business.hours.short}</li>
+          <ul className="mt-8 flex flex-col gap-1.5 text-[0.8125rem] font-semibold uppercase tracking-[0.1em] text-muted sm:flex-row sm:flex-wrap sm:items-center sm:gap-y-2">
+            <li className="sm:pr-4">Owner-run since 2025</li>
+            <li className="sm:border-l sm:border-rule sm:px-4">No contracts</li>
+            <li className="sm:border-l sm:border-rule sm:pl-4">{business.hours.short}</li>
           </ul>
 
           <p className="mt-6 flex items-center gap-3 text-[0.9375rem] text-ink/85">
@@ -51,8 +51,8 @@ export default function Hero() {
               alt="Mike Taylor, owner of Payroll Vault Frederick"
               width={480}
               height={480}
-              sizes="40px"
-              className="size-10 rounded-full border border-rule object-cover"
+              sizes="32px"
+              className="size-8 rounded-full border border-rule object-cover"
             />
             <span>
               Talk to <strong className="font-semibold text-ink">Mike Taylor</strong>, owner and Army veteran.
@@ -67,7 +67,7 @@ export default function Hero() {
             <VaultDial
               animate
               idPrefix="vd-d"
-              className="absolute -right-10 -top-16 hidden size-[168px] lg:block xl:-right-14 xl:size-[184px]"
+              className="absolute -right-4 -top-16 hidden size-[156px] lg:block xl:-right-14 xl:size-[184px]"
             />
           </div>
         </div>

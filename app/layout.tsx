@@ -55,7 +55,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <MobileBar />
           <BackToTop />
         </QuoteProvider>
-        <Analytics />
+        {/* Vercel Web Analytics only exists on Vercel deployments. */}
+        {process.env.VERCEL ? <Analytics /> : null}
       </body>
     </html>
   );
