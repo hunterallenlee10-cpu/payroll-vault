@@ -4,7 +4,7 @@
 
 ## Facts
 
-- Business: Payroll Vault Frederick, an independently owned and operated Payroll Vault franchise.
+- Business: Payroll Vault Frederick. Each Payroll Vault location is independently owned and operated.
 - Owners: Mike and Lisa Taylor, a husband and wife who live in Frederick. Mike runs the location.
 - Opened: January 1, 2025.
 - Mike Taylor: US Army, 1989 to 1993. About 30 years in insurance and risk management before payroll.
@@ -27,7 +27,7 @@
 - Workers' compensation administration with pay-as-you-go quotes.
 - Maryland labor law compliance, including labor law posters.
 - Background checks and drug screening.
-- 401(k) through Payroll Vault's partner 401GO.
+- 401(k) through Payroll Vault's partnership with 401GO.
 
 ## Who we work with
 
@@ -37,3 +37,4 @@ Small and mid-sized businesses in Frederick County, and the CPAs, bookkeepers an
 
 - Home: /
 - Contact and payroll quote: /contact
+- Privacy notice: /privacy

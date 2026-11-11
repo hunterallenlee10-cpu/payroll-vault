@@ -46,7 +46,7 @@ export default function CountyMap({ className }: { className?: string }) {
         const hub = t.name === "Frederick";
         return (
           <g key={t.name}>
-            <circle cx={t.x} cy={t.y} r={hub ? 7 : 4.5} fill={hub ? "#2F7A35" : "#FFFFFF"} stroke="#2F7A35" strokeWidth="2" />
+            <circle cx={t.x} cy={t.y} r={hub ? 7 : 4.5} fill={hub ? "#3A781E" : "#FFFFFF"} stroke="#3A781E" strokeWidth="2" />
             <text
               x={t.lx}
               y={t.ly}

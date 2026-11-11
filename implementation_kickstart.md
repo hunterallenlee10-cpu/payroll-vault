@@ -20,8 +20,8 @@ Downtown Frederick at 9 am. Ledger paper, deep ink, one vault green from the log
 | `paper` | `#F7F5EF` | page background |
 | `bond` | `#FFFFFF` | cards, with 1px `rule` border |
 | `rule` | `#E3DFD3` | borders, ledger lines (35% opacity) |
-| `vault` | `#2F7A35` | primary button, padlock, key numbers, active states, Paid stamp, toggles |
-| `vault-bright` | `#4B964D` | logo file and large padlock fill in the dial only |
+| `vault` | `#3A781E` (aligned to the Payroll Vault logo green #498B2A, darkened to pass AA) | primary button, padlock, key numbers, active states, Paid stamp, toggles |
+| `vault-bright` | `#498B2A` | logo file and large padlock fill in the dial only |
 | `ink` | `#14212B` | text, Checkup band and final CTA band |
 | `muted` | `#5B6670` | secondary text |
 

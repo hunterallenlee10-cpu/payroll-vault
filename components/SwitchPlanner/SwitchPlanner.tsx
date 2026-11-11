@@ -3,7 +3,8 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useId, useRef, useState } from "react";
 import type { PlannerPreset } from "@/lib/planner";
-import { STEPS, initialData, validate, type PlannerData } from "./plannerData";
+import { sendLead } from "@/lib/leads";
+import { STEPS, initialData, smsBody, summaryRows, validate, type PlannerData } from "./plannerData";
 import { StepAbout, StepInfo, StepNeeds, StepTiming, StepToday } from "./Steps";
 import Success from "./Success";
 
@@ -35,7 +36,10 @@ export default function SwitchPlanner({ preset = {}, inline = false }: { preset?
       return;
     }
     if (step < STEPS.length - 1) go(step + 1);
-    else setDone(true);
+    else {
+      sendLead({ source: preset.source ?? "", summary: Object.fromEntries(summaryRows(d)), text: smsBody(d), data: d });
+      setDone(true);
+    }
   };
 
   if (done) return <Success d={d} idp={idp} />;
@@ -88,6 +92,17 @@ export default function SwitchPlanner({ preset = {}, inline = false }: { preset?
         </div>
       </div>
 
+      {step === STEPS.length - 1 && (
+        // DRAFT: confirm consent wording with Payroll Vault corporate (their privacy policy covers SMS consent).
+        <p className="mt-6 text-[0.875rem] leading-relaxed text-muted">
+          By sending, you agree Payroll Vault Frederick may call or text you about your quote. Message and data rates may apply. Reply
+          STOP to opt out. See our{" "}
+          <a href="/privacy" target="_blank" rel="noopener" className="font-semibold text-vault underline underline-offset-2">
+            privacy notice
+          </a>
+          .
+        </p>
+      )}
       <div className="mt-8 flex items-center justify-between gap-3 border-t border-rule pt-5">
         {step > 0 ? (
           <button type="button" onClick={() => go(step - 1)} className="btn btn-ghost">

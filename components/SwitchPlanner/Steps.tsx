@@ -102,7 +102,7 @@ export function StepNeeds({ d, set, idp }: StepProps) {
             type="checkbox"
             checked={d.checkupHelp}
             onChange={() => set("checkupHelp", !d.checkupHelp)}
-            className="mt-1 size-[18px] shrink-0 accent-[#2F7A35]"
+            className="mt-1 size-[18px] shrink-0 accent-[#3A781E]"
           />
           <span>
             <span className="block font-semibold text-ink">Help with something the Checkup flagged</span>

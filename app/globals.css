@@ -4,9 +4,9 @@
   --color-paper: #f7f5ef;
   --color-bond: #ffffff;
   --color-rule: #e3dfd3;
-  --color-vault: #2f7a35;
-  --color-vault-deep: #256329;
-  --color-vault-bright: #4b964d;
+  --color-vault: #3A781E;
+  --color-vault-deep: #2E6507;
+  --color-vault-bright: #498B2A;
   --color-ink: #14212b;
   --color-muted: #5b6670;
   /* Muted text on the ink band: paper at 78% passes AA on #14212B */
@@ -175,7 +175,7 @@
     font-weight: 600;
     color: var(--color-vault);
     text-decoration: underline;
-    text-decoration-color: rgb(47 122 53 / 0.35);
+    text-decoration-color: rgb(58 120 30 / 0.35);
     text-underline-offset: 4px;
     transition: text-decoration-color 160ms ease;
     cursor: pointer;
@@ -276,12 +276,12 @@
 .checkup-range::-webkit-slider-runnable-track {
   height: 6px;
   border-radius: 999px;
-  background: linear-gradient(to right, #2f7a35 0 var(--pct), rgb(247 245 239 / 0.2) var(--pct) 100%);
+  background: linear-gradient(to right, #3A781E 0 var(--pct), rgb(247 245 239 / 0.2) var(--pct) 100%);
 }
 .checkup-range::-moz-range-track {
   height: 6px;
   border-radius: 999px;
-  background: linear-gradient(to right, #2f7a35 0 var(--pct), rgb(247 245 239 / 0.2) var(--pct) 100%);
+  background: linear-gradient(to right, #3A781E 0 var(--pct), rgb(247 245 239 / 0.2) var(--pct) 100%);
 }
 .checkup-range::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -291,14 +291,14 @@
   margin-top: -10px;
   border-radius: 999px;
   background: #f7f5ef;
-  border: 6px solid #2f7a35;
+  border: 6px solid #3A781E;
 }
 .checkup-range::-moz-range-thumb {
   width: 16px;
   height: 16px;
   border-radius: 999px;
   background: #f7f5ef;
-  border: 6px solid #2f7a35;
+  border: 6px solid #3A781E;
 }
 .checkup-range:focus-visible {
   outline: 2px solid #8fd18f;

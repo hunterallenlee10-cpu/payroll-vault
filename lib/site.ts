@@ -15,4 +15,5 @@ export const absolute = (path = "/") => `${siteUrl}${path.startsWith("/") ? path
 export const lastModified = {
   home: "2026-11-11",
   contact: "2026-11-11",
+  privacy: "2026-11-11",
 };

@@ -44,7 +44,7 @@ export default async function OgImage() {
             style={{
               fontFamily: "Public Sans",
               fontSize: 26,
-              color: "#2F7A35",
+              color: "#3A781E",
               marginTop: 26,
               letterSpacing: 4,
               textTransform: "uppercase",

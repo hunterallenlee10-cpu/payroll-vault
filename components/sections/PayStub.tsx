@@ -54,7 +54,7 @@ export default function PayStub() {
         <div className="vault-stamp-wrap absolute bottom-2 right-0 flex h-[76px] w-[176px] items-center justify-center">
           <span
             className="vault-stamp inline-flex flex-col items-center rounded-[5px] border-[2.5px] border-vault px-3 py-1.5 text-vault"
-            style={{ boxShadow: "inset 0 0 0 2px #fff, inset 0 0 0 3.5px #2F7A35" }}
+            style={{ boxShadow: "inset 0 0 0 2px #fff, inset 0 0 0 3.5px #3A781E" }}
           >
             <span className="font-display text-[1.375rem] font-semibold leading-none tracking-[0.08em]">PAID</span>
             <span className="mt-1 text-[0.6875rem] font-semibold uppercase leading-none tracking-[0.2em]">On time</span>
