@@ -17,6 +17,10 @@ export const business = {
   email: "Mike.Taylor@payrollvault.com",
   clientLogin: "https://www.payrollvault.com/employer-employee-portal-login.html",
   nationalSite: "https://www.payrollvault.com/",
+  // Corporate pages the local site links to rather than duplicating.
+  referralProgram: "https://www.payrollvault.com/give-to-get-referral-program.html",
+  findLocation: "https://www.payrollvault.com/find-a-location.html",
+  corporatePrivacy: "https://www.payrollvault.com/privacy-policy.html",
   // DRAFT: add LinkedIn or Facebook if he has them
   social: [] as string[],
   founded: "2025-01-01",
@@ -57,7 +61,12 @@ export const business = {
   taglines: {
     brand: "Locally Owned. Client-Focused. Payroll Re-Defined.",
     rethink: "It's Time to Rethink Payroll®",
+    // Corporate's own hero pattern on its location pages.
+    rethinkLocal: "It's Time to Rethink Payroll® in Frederick, Maryland",
   },
+  // DRAFT: replace with the exact "Independently Owned and Operated" wording from the Payroll Vault operations manual,
+  // and add the legal entity name ("[Entity], d/b/a Payroll Vault Frederick").
+  disclosure: "Each Payroll Vault location is independently owned and operated.",
   bio: {
     army: "US Army, 1989 to 1993.",
     insurance: "Thirty years in insurance and risk management before payroll.",
@@ -100,17 +109,20 @@ export const services: Service[] = [
   { id: "retirement", name: "401(k) through 401GO", short: "401(k)", line: "A retirement plan that syncs with payroll.", size: "sm" },
 ];
 
-// 401GO is Payroll Vault's retirement partner. Facts from his franchise page.
+// 401GO is Payroll Vault's retirement partner. Wording follows corporate's Frederick page.
 export const retirement = {
   lines: [
     "Payroll syncs automatically, so contributions are never retyped.",
-    "A new plan is set up in about 15 minutes.",
-    "A dedicated success manager. Real humans answer the phone.",
-    "Helps you meet Maryland's retirement plan mandate.",
+    "15-minute new plan setup.",
+    "A dedicated customer success manager. Real humans answer the phone.",
+    "Helps you adhere to state retirement mandates.",
   ],
-  // DRAFT: tax credit figure is the franchise page's claim; confirm wording with Mike before launch
+  // DRAFT: corporate's page says "Unlock up to $16,500 in tax credits". Confirm the claim and footnote with corporate before launch.
   creditFigure: "Up to $16,500",
-  creditLabel: "in available tax credits",
+  creditLabel: "in tax credits you may be able to unlock",
+  // $16,500 = SECURE 2.0 startup credit (up to $5,000 a year for 3 years) + auto-enrollment credit ($500 a year for 3 years).
+  creditFootnote:
+    "Maximum combined SECURE 2.0 startup and automatic enrollment credits over a new plan's first three years, for eligible employers. Your amount depends on your business. Ask your tax advisor.",
 };
 
 // DRAFT: confirm process steps
@@ -128,13 +140,14 @@ export const faqs: { q: string; a: string }[] = [
   { q: "I have employees who live in Pennsylvania or West Virginia. Can you handle that?", a: "Yes. Cross-state staff are common here, and it is worth a quick call so we can look at your setup and get withholding right." },
   { q: "Can my employees see their pay stubs online?", a: "Yes. Through the employee self-service portal they can see pay stubs and W-2s on their phone or computer." },
   { q: "Do you work with my accountant?", a: "Yes. We work alongside CPAs and bookkeepers every day, and your accountant keeps the client relationship." },
-  { q: "Can you help with workers' comp, background checks or a 401(k)?", a: "Yes. We offer workers' compensation administration with pay-as-you-go quotes, background checks and drug screening, Maryland labor law compliance including posters, and a 401(k) through our partner 401GO." },
+  { q: "Can you help with workers' comp, background checks or a 401(k)?", a: "Yes. We offer workers' compensation administration with pay-as-you-go quotes, background checks and drug screening, Maryland labor law compliance including posters, and a 401(k) through Payroll Vault's partnership with 401GO." },
   { q: "When can I reach you?", a: "Monday to Friday, 9:00 am to 5:00 pm, at 301.479.0433." },
 ];
 
-// Sample reviews. Not real. Replace with real Google reviews before launch.
-export const sampleReviews = [
-  { who: "Owner, a retail shop on Market Street", text: "I used to lose a Sunday every month to payroll. Now I answer two questions on Thursday and it is done. When I call, someone who knows my shop picks up." },
-  { who: "Owner, a downtown Frederick restaurant", text: "Tips, part-timers, people who live in Pennsylvania. Our old provider sent me to a help article. Mike's team just fixed it." },
-  { who: "Owner, a Frederick County contractor", text: "We switched in the middle of the year and nobody missed a paycheck. They moved everything over and walked me through the first run." },
+// Sample reviews. Not real. Replace with real Google reviews (with permission) before launch.
+// While every review is a sample, the section is hidden automatically in live mode.
+export const sampleReviews: { who: string; text: string; sample: boolean }[] = [
+  { who: "Owner, a retail shop on Market Street", text: "I used to lose a Sunday every month to payroll. Now I answer two questions on Thursday and it is done. When I call, someone who knows my shop picks up.", sample: true },
+  { who: "Owner, a downtown Frederick restaurant", text: "Tips, part-timers, people who live in Pennsylvania. Our old provider sent me to a help article. Mike's team just fixed it.", sample: true },
+  { who: "Owner, a Frederick County contractor", text: "We switched in the middle of the year and nobody missed a paycheck. They moved everything over and walked me through the first run.", sample: true },
 ];

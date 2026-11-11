@@ -2,6 +2,12 @@
 
 The deployed demo stays in demo mode (`noindex, nofollow`, no sitemap, concept footer line). Do these in order on launch day.
 
+## 0. Corporate approval first
+
+- [ ] Payroll Vault corporate has approved the site and the domain in writing (franchise agreement: Unique Domain, page-by-page approval). See `CORPORATE-REVIEW.md`.
+- [ ] Agree with corporate how this site and payrollvault.com/payroll-vault-frederick.html avoid competing (canonical or redirect).
+- [ ] Set `NEXT_PUBLIC_LEAD_ENDPOINT` if corporate wants quote requests sent to its CRM.
+
 ## 1. Flip the switch
 
 - [ ] In Vercel, Project Settings, Environment Variables (Production):
@@ -13,7 +19,7 @@ The deployed demo stays in demo mode (`noindex, nofollow`, no sitemap, concept f
 
 - [ ] View source on `/` and `/contact`: `<meta name="robots" content="index, follow">`.
 - [ ] `https://the-real-domain/robots.txt` lists `Sitemap: https://the-real-domain/sitemap.xml`.
-- [ ] `https://the-real-domain/sitemap.xml` lists `/` and `/contact`.
+- [ ] `https://the-real-domain/sitemap.xml` lists `/`, `/contact` and `/privacy`.
 - [ ] Canonicals and `og:url` use the real domain. The concept footer line is gone.
 - [ ] Paste the URL into a link preview (Slack, iMessage) and check the Open Graph image.
 - [ ] Run Rich Results Test on `/` and `/contact`. Expect AccountingService, FAQPage, Service and BreadcrumbList with no errors.
@@ -39,9 +45,11 @@ Search the code for `DRAFT` and the word `Sample`. Before launch, each one must 
 - [ ] Team size (four payroll processors) and a real team photo for the Meet Mike placeholder.
 - [ ] Towns served (footer, `/contact` map, JSON-LD `areaServed`, `llms.txt`).
 - [ ] Onboarding wording ("Switching is on us", FAQ answer) and the three switching steps.
-- [ ] 401GO tax credit claim ("Up to $16,500 in available tax credits").
+- [ ] 401GO tax credit claim and footnote ("Up to $16,500 in tax credits").
 - [ ] Chamber of Commerce and BNI membership, and the BNI chapter name.
-- [ ] Real Google reviews to replace the three sample cards. Do not add review schema for anything that is not a real, on-page review.
+- [ ] Real Google reviews (with permission) to replace the three sample cards. In live mode the section stays hidden until at least one review has `sample: false`. Do not add review schema for anything that is not a real, on-page review.
 - [ ] LinkedIn or Facebook links, if any (add to `lib/business.ts` and `sameAs` in `lib/schema.ts`).
 - [ ] Bio wording in Meet Mike, and the success message "Mike will call you back during business hours".
+- [ ] Privacy notice (`/privacy`) and the call/text consent line in the quote form, checked against corporate's privacy policy.
+- [ ] Independent ownership line and legal entity name (`business.disclosure`).
 - [ ] Maryland rules in `lib/checkup.ts`: re-check each source URL. Frederick County local rates and the Worker Freedom Act poster date change over time.

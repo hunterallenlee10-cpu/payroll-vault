@@ -7,7 +7,7 @@ export default function Retirement() {
     <section id="retirement" aria-labelledby="retirement-title" className="border-y border-rule bg-bond py-16 lg:py-20">
       <div className="wrap grid items-center gap-10 lg:grid-cols-12">
         <div className="lg:col-span-7">
-          <p className="eyebrow">Retirement, built in · with our partner 401GO</p>
+          <p className="eyebrow">Retirement, built in · Through Payroll Vault&rsquo;s partnership with 401GO</p>
           <h2 id="retirement-title" className="mt-3 text-[2rem] font-semibold leading-[1.1] sm:text-[2.5rem]">
             A 401(k) that runs with your payroll.
           </h2>
@@ -24,8 +24,15 @@ export default function Retirement() {
           {/* DRAFT: confirm claim wording with Mike */}
           <p className="font-display text-[3rem] font-semibold leading-none text-vault tabular-nums sm:text-[3.5rem]">
             {retirement.creditFigure}
+            <sup className="ml-0.5 align-super text-[0.4em] text-ink/70" aria-hidden="true">
+              *
+            </sup>
           </p>
-          <p className="mt-2 text-[1.0625rem] text-ink">{retirement.creditLabel}.</p>
+          <p className="mt-2 text-[1.0625rem] text-ink" aria-describedby="credit-note">{retirement.creditLabel}.</p>
+          <p id="credit-note" className="mt-3 text-[0.8125rem] leading-relaxed text-muted">
+            <span aria-hidden="true">* </span>
+            {retirement.creditFootnote}
+          </p>
           <div className="mt-4">
             <QuoteButton preset={{ services: ["retirement"], source: "retirement-band" }} className="text-link" ariaLabel="Add a 401(k) to my payroll quote">
               Add a 401(k) to my quote

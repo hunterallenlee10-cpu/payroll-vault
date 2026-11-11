@@ -37,7 +37,8 @@ export function localBusinessSchema() {
         containedInPlace: { "@type": "AdministrativeArea", name: "Frederick County, Maryland" },
       })),
     ],
-    parentOrganization: { "@type": "Organization", name: business.brand, url: business.nationalSite },
+    // "brand" rather than "parentOrganization": each location is independently owned and operated.
+    brand: { "@type": "Brand", name: business.brand, url: business.nationalSite },
     knowsAbout: services.map((s) => s.name),
     hasOfferCatalog: {
       "@type": "OfferCatalog",

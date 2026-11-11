@@ -62,7 +62,7 @@ export default function MeetMike() {
         <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2 lg:max-w-[360px]">
           <ul className="flex flex-wrap gap-2" aria-label="Memberships">
             {business.memberships.map((m) => (
-              <li key={m} className="rounded-full border border-ink/25 bg-bond px-3.5 py-2 text-[0.8125rem] font-semibold text-ink">
+              <li key={m} className="rounded-[6px] border border-ink/25 bg-bond px-3.5 py-2 text-[0.8125rem] font-semibold text-ink">
                 {m}
               </li>
             ))}

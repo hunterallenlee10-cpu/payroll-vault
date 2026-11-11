@@ -16,8 +16,8 @@ const towns: Town[] = [
   { name: "Walkersville", x: 279.6, y: 238.6, lx: 288, ly: 243, anchor: "start" },
   { name: "Middletown", x: 145.5, y: 277.3, lx: 153, ly: 282, anchor: "start" },
   { name: "Frederick", x: 239.3, y: 303.4, lx: 251, ly: 309, anchor: "start" },
-  { name: "New Market", x: 336.5, y: 331.3, lx: 330, ly: 322, anchor: "end" },
-  { name: "Mount Airy", x: 416.4, y: 337.6, lx: 410, ly: 324, anchor: "end" },
+  { name: "New Market", x: 336.5, y: 331.3, lx: 340, ly: 350, anchor: "middle" },
+  { name: "Mount Airy", x: 416.4, y: 337.6, lx: 412, ly: 324, anchor: "end" },
   { name: "Ijamsville", x: 304.6, y: 354.7, lx: 312, ly: 372, anchor: "start" },
   { name: "Urbana", x: 280.3, y: 382.6, lx: 272, ly: 400, anchor: "end" },
   { name: "Adamstown", x: 195.5, y: 396.1, lx: 196, ly: 415, anchor: "middle" },
@@ -46,14 +46,15 @@ export default function CountyMap({ className }: { className?: string }) {
         const hub = t.name === "Frederick";
         return (
           <g key={t.name}>
-            <circle cx={t.x} cy={t.y} r={hub ? 7 : 4.5} fill={hub ? "#2F7A35" : "#FFFFFF"} stroke="#2F7A35" strokeWidth="2" />
+            <circle cx={t.x} cy={t.y} r={hub ? 7 : 4.5} fill={hub ? "#3A781E" : "#FFFFFF"} stroke="#3A781E" strokeWidth="2" />
             <text
               x={t.lx}
               y={t.ly}
               textAnchor={t.anchor}
-              fontSize={hub ? 16 : 13.5}
+              fontSize={hub ? 18 : 15}
               fontWeight={hub ? 600 : 500}
               fill="#14212B"
+              className={hub ? undefined : "county-label-minor"}
               style={{ fontFamily: "var(--font-public-sans), system-ui, sans-serif" }}
             >
               {t.name}

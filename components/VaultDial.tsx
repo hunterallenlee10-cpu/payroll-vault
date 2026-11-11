@@ -39,8 +39,8 @@ export default function VaultDial({ className, animate = false, idPrefix = "vd" 
           <stop offset="1" stopColor="#ecebe4" />
         </radialGradient>
         <linearGradient id={lock} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#5aa65c" />
-          <stop offset="1" stopColor="#4b964d" />
+          <stop offset="0" stopColor="#5E9E36" />
+          <stop offset="1" stopColor="#498B2A" />
         </linearGradient>
       </defs>
 
@@ -92,7 +92,7 @@ export default function VaultDial({ className, animate = false, idPrefix = "vd" 
       </g>
 
       {/* Index mark: the dial turns to meet it */}
-      <path d="M100 11 l-5 -8 h10 z" fill="#2f7a35" />
+      <path d="M100 11 l-5 -8 h10 z" fill="#3A781E" />
 
       {/* Inner bevel and face */}
       <circle cx="100" cy="100" r="64" fill={`url(#${steelDark})`} />
@@ -104,13 +104,13 @@ export default function VaultDial({ className, animate = false, idPrefix = "vd" 
         <path
           d="M83 96 V80 a17 17 0 0 1 34 0 V96"
           fill="none"
-          stroke="#2f7a35"
+          stroke="#3A781E"
           strokeWidth="9"
           strokeLinecap="butt"
         />
       </g>
       <rect x="70" y="90" width="60" height="50" rx="8" fill={`url(#${lock})`} />
-      <rect x="70" y="90" width="60" height="50" rx="8" fill="none" stroke="#2f7a35" strokeWidth="1.25" />
+      <rect x="70" y="90" width="60" height="50" rx="8" fill="none" stroke="#3A781E" strokeWidth="1.25" />
       {/* Dollar sign */}
       <path
         d="M108.5 107 c-1.8-2.9-4.9-4.4-8.5-4.4 c-4.6 0-7.8 2.4-7.8 5.9 c0 8.3 16.6 4.4 16.6 12.6 c0 3.7-3.4 6.3-8.3 6.3 c-4 0-7.3-1.7-9-4.6"

@@ -42,7 +42,7 @@ export default function TimeBack({
           <label htmlFor="checkup-hours" className="text-[0.9375rem] font-semibold text-paper">
             Hours you spend each payroll
           </label>
-          <output htmlFor="checkup-hours" className="font-display text-lg font-medium text-paper tabular-nums">
+          <output htmlFor="checkup-hours" className="shrink-0 whitespace-nowrap font-display text-lg font-medium text-paper tabular-nums">
             {formatHours(hoursEach)}
           </output>
         </div>
